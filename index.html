@@ -3,70 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Java - Estácio</title>
+    <title>Hotelaria - Estácio</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!--Inicio destaque-->
-<div class="destaque">
 
-<!--Menu Responsivo-->
-    <nav id="navBar">
-        <img src="assets/img/logo.png" alt="Projeto Java" class="logo">
-        <ul class="nav-links">
-            <li><a href="#" title="Lugares Populares" class="activ">Lugares Populares</a></li>
-            <li><a href="#" title="Viajar Agora">Viajar Agora</a></li>
-            <li><a href="#" title="Pacotes Online">Pacotes Online</a></li>
-        </ul>
-        <a href="" class="cadastro-btn">Cadastre-se Agora</a>
+     <!--INICIO DESTAQUE TOPO DO SITE-->
+    <div class="destaque">
 
-            <!--Menu celular-->
+        <!--MENU DO SITE-->
+        <nav id="navBar">
+            <img src="assets/img/logo.png" alt="" class="logo">
+            <ul class="nav-links">
+                <li><a href="#" title="" class="active">Lugares Populares</a></li>
+                <li><a href="#" title="">Viajar Agora</a></li>
+                <li><a href="#" title="">Pacotes Online</a></li>
+            </ul>
+            <a href="" title="" class="cadastro-btn">Cadastre-se Agora</a>
+
+             <!--MENU CELULAR DO SITE-->
             <ion-icon name="menu-outline" class="menu-outline" onclick="menucelular()"></ion-icon>
-            <!--Fim Menu celular-->
-    </nav>
-<!--Fim Menu Responsivo-->
-<div class="busca-site">
-<form action="" method="post">
-    <div class="local-input">
-        <label>Localização</label>
-            <input type="text" name="" placeholder="Onde você está indo?">
-        
+             <!--MENU CELULAR DO SITE-->
+
+        </nav>
+         <!--FIM MENU DO SITE-->
+
+       <!--INICIO CORPO DO MENU DO SITE-->
+        <div class="container">
+            <h1>Encontre Sua Próxima Estadia</h1>
+             <!--INICIO BUSCA DO SITE-->
+             <div class="busca-site">
+                <form action="" method="post">
+
+                    <div class="local-input">
+                        <label>Localização</label>
+                        <input type="text" placeholder="Onde você está indo? ">
+                    </div>
+
+                    <div>
+                        <label>Data Inicial</label>
+                        <input type="text" placeholder="Adicione a data">
+                    </div>
+
+                    <div>
+                        <label>Data Final</label>
+                        <input type="text" placeholder="Adicione a data">
+                    </div>
+
+
+                    <div>
+                        <label>Quem</label>
+                        <input type="text" placeholder="Adicionar hóspedes">
+                    </div>
+
+                    <button type="submit"><img src="assets/img/busca.png" alt=""></button>
+
+                </form>
+             </div>
+             <!--FIM BUSCA-->
+        </div>
+         <!--FIM CORPO DO MENU-->
+
     </div>
+     <!--FIM TOPO-->
 
-    <div>
-        <label>Data inicial</label>
-            <input type="text" name="" placeholder="Adicione a data">
+      <!--INICIO CORPO-->
+      <div class="container">
+        <h2 class="sub-titulo">Exclusivos</h2>
+
+        <!--INICIO EXCLUSIVOS-->
+        <div class="exclusivos">
+
+            <div>
+                <img src="assets/img/miniatura-1.png" alt="">
+                <span>
+                    <h3>Bombinhas</h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
+            
+            <div>
+                <img src="assets/img/miniatura-2.png" alt="">
+                <span>
+                    <h3>Mariscal</h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
+
+            <div>
+                <img src="assets/img/miniatura-3.png" alt="">
+                <span>
+                    <h3>Nordeste</h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
+
+            <div>
+                <img src="assets/img/miniatura-4.png" alt="">
+                <span>
+                    <h3>Nordeste</h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
+
+            <div>
+                <img src="assets/img/miniatura-5.png" alt="">
+                <span>
+                    <h3>Camboriu</h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
+
+            <div>
+                <img src="assets/img/miniatura-6.png" alt="">
+                <span>
+                    <h3>Jalapão</h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
+            
+            <div>
+                <img src="assets/img/miniatura-7.png" alt="">
+                <span>
+                    <h3>Curitiba</h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
+
+            <div>
+                <img src="assets/img/miniatura-8.png" alt="">
+                <span>
+                    <h3>Maranhão</h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
+
+            <div>
+                <img src="assets/img/miniatura-9.png" alt="">
+                <span>
+                    <h3>Tocantins</h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
+
+            <div>
+                <img src="assets/img/miniatura-10.png" alt="">
+                <span>
+                    <h3>Rio </h3>
+                    <p>Comprar R$ 777</p>
+                </span>
+            </div>
         
+        </div>
+
+        <!--FIM  EXCLUSIVOS CORPO-->
+
+
+        <!--INICIO LOCAIS MAIS ALUGADOS-->
+        <h2 class="sub-titulo">Locais Mais Visitados</h2>
+
+        <div class="lacais-quentes">
+
+            <div>
+                <img src="assets/img/foto-1.jpg" alt="">
+                <h3>Rio de Janeiro</h3>
+            </div>
+
+            <div>
+                <img src="assets/img/foto-2.jpg" alt="">
+                <h3>Jalapão TO</h3>
+            </div>
+
+            <div>
+                <img src="assets/img/foto-3.jpg" alt="">
+                <h3>Bombinhas SC</h3>
+            </div>
+
+            
+            <div>
+                <img src="assets/img/foto-4.jpg" alt="">
+                <h3>Palmas TO</h3>
+            </div>
+
+
+        </div>
+         <!--FIM LOCAIS MAIS ALUGADOS-->
+
+
+    <!--INICIO CHAMADA PARA AÇÃO CORPO-->
+       <div class="cta">
+        <h3>Compartilhe <br>seu local e ganhe agora</h3>
+        <p>Grande oportunidade de ganhar dinheiro <br>compartilhando seu espaço extra</p>
+        <a href="" class="cta-btn">Saiba Mais</a>
+       </div>
+    <!--FIM CHAMADA PARA AÇÃO CORPO-->
+
+
+     <!-- INICIO STORIES CORPO-->
+     <h2 class="sub-titulo">Turismo</h2>
+      <div class="stories">
+
+      <div>
+        <img src="assets/img/historia-1.png" alt="">
+        <p>O Melhor Turismo é no Brasil Apenas R$ 777,77</p>
+      </div>
+
+      <div>
+        <img src="assets/img/historia-2.png" alt="">
+        <p>O Melhor Turismo é no Brasil Apenas R$ 777,77</p>
+      </div>
+
+
+      <div>
+        <img src="assets/img/historia-3.png" alt="">
+        <p>O Melhor Turismo é no Brasil Apenas R$ 777,77</p>
+      </div>
+
+      
     </div>
+     <!-- FIM STORIES CORPO-->
 
-    <div>
-        <label>Data Final</label>
-            <input type="text" name="" placeholder="Adicione a data">
-        
-    </div>
 
-    <div>
-        <label>Quem</label>
-            <input type="text" name="" placeholder="Onde você está indo?">
-        
-    </div>
-    <button type="submit"> <img src="assets/img/busca-maykon.png" alt=""></button>
-</form>
+     <!-- BOTÃO GANHAR DINHEIRO CORPO-->
+     <a href="" class="ganhar-btn">Comece ganhar dinheiro</a>
+     <!-- FIM BOTÃO GANHAR DINHEIRO CORPO-->
 
-</div>
 
-<!--Inicio do corpo do menu-->
-<div class="container">
+     <!-- INICIO SOBRE NOS CORPO DO-->
+     <div class="sobre-nos">
+        <h2>Sobre nós</h2>
+        <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+     </div>
+     <!-- FIM SOBRE NOS DINHEIRO CORPO-->
 
-    <h1>Encontre Sua Próxima Estadia</h1>
-    <!--Inicio busca site-->
-    <!--Fim busca site-->
-</div>
-<!--Fim do corpo do menu-->
-</div>
-    
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="assets/js/app.js"></script>
+
+     <footer class="rodape"> 
+        <a href=""><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href=""><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href=""><ion-icon name="logo-youtube"></ion-icon></a>
+        <hr>
+     <p>Todos os direitos reservados a ALM Tech</p>
+     </footer>
+
+
+      </div>
+      <!--FIM CORPO DO SITE-->
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script src="assets/js/app.js"></script>
 </body>
 </html>

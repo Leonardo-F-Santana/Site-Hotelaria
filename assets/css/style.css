@@ -1,0 +1,452 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+
+}
+
+:root{
+    --cor-padrao-fonte:#fff;
+    --cor-link-topo:#fff;
+    --cor-font-preto: #000;
+    --cor-botao-pesquisa-top:#ff5361;
+    --cor-hover-btn:#96045e;
+    --cor-fonte-sub-titulo:#333;
+    --cor-hover-ganhar-dinheiro: #05af2a;
+    --cor-topo-celular:#000;
+    --borda-busca-radape-celular:#ddd;
+
+}
+
+.destaque{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),url('../img/banner-ms.png');
+    background-size: cover;
+    background-position: center;
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+}
+
+nav .menu-outline{
+    display: none;
+}
+
+.logo{
+    width: 140px;
+    cursor: pointer;
+}
+
+.nav-links li{
+    list-style: none;
+    display: inline-block;
+    margin:10px 30px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: var(--cor-link-topo);
+}
+
+
+.active{
+    position: relative;
+}
+
+.active::after{
+
+    content: '';
+    background-color: var(--cor-link-topo);
+    width: 25px;
+    height: 2px;
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius:2px;
+
+}
+
+.cadastro-btn{
+    background: var(--cor-link-topo);
+    color:var(--cor-font-preto);
+    padding:8px 20px;
+    border-radius:20px;
+    text-decoration:none;
+    font-size:14px;
+    
+}
+
+.cadastro-btn:hover{
+    background-color: var(--cor-botao-pesquisa-top);
+    color:var(--cor-link-topo);
+}
+
+.container{
+    padding: 0 7%;
+}
+
+.destaque h1{
+    font-size: 4vw;
+    font-weight: 500;
+    color:var(--cor-padrao-fonte);
+    text-align: center;
+    padding-top:22%;
+}
+
+.busca-site{
+    background-color: var(--cor-padrao-fonte);
+    width: 70%;
+    margin:30px auto;
+    padding: 6px 10px 6px 30px;
+    border-radius: 50px;
+}
+
+
+.local-input{
+    flex:1;
+}
+
+.busca-site form label{
+    font-weight: 600;
+}
+
+.busca-site form{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.busca-site form input{
+    display: block;
+    border:none;
+    background-color: transparent;
+    outline: none;
+}
+
+.busca-site form button{
+  background-color: var(--cor-botao-pesquisa-top);
+  width: 55px;
+  height: 55px;
+  border-radius:50%;
+  outline: none;
+  cursor: pointer;
+  border:none;
+}
+
+.busca-site form button img{
+    width: 15px;
+    margin-top: 5px;
+}
+
+.sub-titulo{
+  margin: 50px 0 20px;
+  font-size: 2.2vw;
+  font-weight: 500;
+  color: var(--cor-fonte-sub-titulo);
+}
+
+.exclusivos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap:30px;
+}
+
+.exclusivos div img{
+    width: 100%;
+    border-radius: 10px;
+   
+}
+
+.exclusivos div{
+  position: relative;
+  
+}
+
+.exclusivos div span{
+    position: absolute;
+    top:50%;
+    left:43%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:var(--cor-padrao-fonte);
+}
+
+.lacais-quentes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap:30px;
+    margin-bottom: 30px;
+}
+
+
+.lacais-quentes div img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.lacais-quentes h3{
+    font-weight: 600;
+    margin-top:10px;
+}
+
+.cta{
+    margin: 80px 0;
+    background-image: linear-gradient(to right, #3f2321, transparent),url('../img/banner-2.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding:5%;
+    color:var(--cor-padrao-fonte);
+
+}
+
+
+.cta h3{
+    font-size: 4vw;
+    font-weight: 500;
+    line-height: 5.3vw;
+}
+
+.cta p{
+    font-size: 18px;
+    margin:10px 0;
+
+}
+
+.cta-btn{
+    display: inline-block;
+    background-color: var(--cor-botao-pesquisa-top);
+    color:var(--cor-link-topo);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    margin-top:20px;
+}
+
+.cta-btn:hover{
+    background-color: var(--cor-hover-ganhar-dinheiro);
+}
+
+.stories{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap:30px;
+    margin-bottom: 30px;
+}
+
+.stories div img{
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.stories div{
+    position: relative;
+    text-align: center;
+}
+
+.stories p{
+    width: 80%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:var(--cor-padrao-fonte);
+    font-size:26px;
+
+}
+
+.ganhar-btn{
+    display: block;
+    width: 80%;
+    max-width: 350px;
+    background-color: var(--cor-botao-pesquisa-top);
+    color:var(--cor-padrao-fonte);
+    text-decoration: none;
+    text-align: center;
+    margin: 60px auto;
+    padding:15px;
+    border-radius:30px;
+    font-size:20px; 
+    
+}
+
+.ganhar-btn:hover{
+    background-color: var(--cor-hover-ganhar-dinheiro);
+}
+
+.sobre-nos{
+    text-align: center;
+    margin: 80px 0;
+    color:var(--cor-font-preto);
+    font-size:17px;
+}
+
+
+.sobre-nos h2{
+    font-size:28px;
+    margin-bottom:30px;
+    font-weight: 500;
+}
+
+.rodape{
+    margin:80px 0 10px;
+    text-align: center;
+}
+
+.rodape a{
+    text-decoration: none;
+    color:var(--cor-botao-pesquisa-top);
+    font-size: 22px;
+    margin: 0 10px;
+
+}
+
+.rodape hr{
+  background-color: var(--cor-botao-pesquisa-top);
+  height: 1px;
+  width: 100%;
+  border: 0;
+  margin: 20px 0;
+}
+
+.rodape p{
+    padding-bottom:15px;
+}
+
+
+
+
+/*--------------------------------PARTE MOBILE MSFLIX.COM.BR E MAYKONSILVEIRA.COM.BR-------------------------------------*/
+
+
+@media only screen and (max-width:700px){
+    
+    .logo{
+        position:fixed;
+        top:4%;
+        left:7%;
+
+    }
+
+    nav{
+        display: inline-block;
+        position:fixed;
+        top:0;
+        z-index:100;
+        width: 100%;
+        padding: 100px 7% 0;
+        background-color: var(--cor-topo-celular);
+        text-align: right;
+        max-height: 100px;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+
+    nav .nav-links li{
+     margin: 10px 0;
+     display: block;
+    }
+
+    .cadastro-btn{
+        margin:15px 0 30px;
+        display: inline-block;
+    }
+
+    nav .menu-outline{
+        display: block;
+        position: fixed;
+        top:4%;
+        right: 7%;
+        color:var(--cor-padrao-fonte);
+        font-size: 28px;
+    }
+
+    .active::after{
+        left:-40px;
+        transform: translate(0, 50%);
+        bottom: 50%;
+    
+    }
+
+    .escondemenu{
+        max-height: 300px;
+    }
+
+    .destaque h1{
+        padding-top:200px;
+        font-size: 7vw;
+    }
+
+    .busca-site{
+        width: 90%;
+        margin: 30px auto;
+        padding: 20px 10px 30px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .busca-site form{
+        display: block;
+    }
+
+    .busca-site form input{
+        border-bottom: 1px solid var(--borda-busca-radape-celular);
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        padding-bottom:10px;
+
+    }
+
+    .busca-site form  button{
+        position:absolute;
+        bottom:0;
+        left: 50%;
+        transform: translate(-50%,50%);
+
+    }
+
+    .sub-titulo{
+        font-size:6vw;
+    }
+
+    .cta{
+        padding:15% 5%;
+
+    }
+
+    .cta h3{
+      font-size: 7vw;
+      line-height: 8vw;
+    }
+
+    .cta p{
+        font-size: 14px;
+    }
+
+    .cta-btn{
+      padding: 6px; 
+      border-radius: 4px; 
+      margin-top:10px;
+      font-size: 14px;
+    }
+
+    .stories p{
+        font-size: 22px;
+    }
+
+    .sobre-nos{
+        font-size: 15px;
+    }
+
+
+}
