@@ -16,6 +16,9 @@
     --cor-hover-ganhar-dinheiro: #05af2a;
     --cor-topo-celular:#000;
     --borda-busca-radape-celular:#ddd;
+    --border-lista-imoveis: #ccc;
+    --cor-info-imovel:#555;
+    --borda-lateral-direita: #999;
 
 }
 
@@ -325,7 +328,7 @@ nav .menu-outline{
 
 
 
-/*--------------------------------PARTE MOBILE MSFLIX.COM.BR E MAYKONSILVEIRA.COM.BR-------------------------------------*/
+/*--------------------------------PARTE HOME MOBILE -------------------------------------*/
 
 
 @media only screen and (max-width:700px){
@@ -449,4 +452,27 @@ nav .menu-outline{
     }
 
 
+}
+/*--------------------------------LISTAGEM DE IMOVEIS -------------------------------------*/
+
+.nav-msflix{
+    background-color: var(--cor-padrao-fonte);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.nav-msflix .nav-links li a{
+    color:var(--cor-font-preto);
+
+}
+.nav-msflix cadastro-btn{
+    background-color: var(--cor-botao-pesquisa-top);
+    color: var(--cor-link-topo);
+}
+.nav-msflix .cadastro-btn:hover{
+    background-color: var(--cor-hover-ganhar-dinheiro);
+}
+.nav-msflix .menu-outline{
+    color: var(--cor-topo-celular);
+}
+.nav-msflix .active::after{
+    background-color: var(--cor-font-preto);
 }
