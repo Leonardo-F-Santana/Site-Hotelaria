@@ -159,7 +159,7 @@ nav .menu-outline{
 .exclusivos{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap:30px;
+    grid-gap:10px;
 }
 
 .exclusivos div img{
