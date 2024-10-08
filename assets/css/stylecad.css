@@ -117,3 +117,7 @@ form .input-group button:hover{
         padding: 0;
     }
 }
+.error {
+    color: red;
+    font-size: 0.9em;
+}
