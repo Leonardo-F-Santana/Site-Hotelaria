@@ -24,9 +24,9 @@ public class Users {
 	@Column(unique = true)
 	private String telefone;
 
+	@Override
 	public String toString() {
-		String var10000 = String.valueOf(this.id);
-		return "Student [id=" + var10000 + ", name=" + this.name + ", email=" + this.email + ", telefone=" + this.telefone + "]";
+		return "Student [id=" + id + ", name=" + name + ", email=" + email + ", telefone=" + telefone + "]";
 	}
 
 	public Users() {
@@ -40,7 +40,7 @@ public class Users {
 	}
 
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(Integer id) {
@@ -48,7 +48,7 @@ public class Users {
 	}
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name) {
@@ -56,7 +56,7 @@ public class Users {
 	}
 
 	public String getEmail() {
-		return this.email;
+		return email;
 	}
 
 	public void setEmail(String email) {
@@ -64,7 +64,7 @@ public class Users {
 	}
 
 	public String getPassword() {
-		return this.password;
+		return password;
 	}
 
 	public void setPassword(String password) {
@@ -72,7 +72,7 @@ public class Users {
 	}
 	
 	public String getTelefone() {
-		return this.telefone;
+		return telefone;
 	}
 
 	public void setTelefone(String telefone) {
@@ -83,14 +83,9 @@ public class Users {
 		MessageDigest md5 = MessageDigest.getInstance("MD5");
 		byte[] messageDigest = md5.digest(password.getBytes());
 		StringBuilder sb = new StringBuilder();
-		byte[] var8 = messageDigest;
-		int var7 = messageDigest.length;
-
-		for (int var6 = 0; var6 < var7; ++var6) {
-			byte b = var8[var6];
-			sb.append("%02x".formatted(b));
+		for(byte b: messageDigest) {
+			sb.append(String.format("%02x", b));
 		}
-
 		return sb.toString();
 	}
 }

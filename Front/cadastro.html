@@ -20,7 +20,7 @@
         <div class="form-box">
             <h2>Criar Conta</h2>
             <p> Já é um membro? <a href="login.html"> Login </a> </p>
-            <form th:action="http://localhost:8080/cadastrar" th:object="${users}" method="POST">
+            <form method="post" role="form" th:action="@{/cadastrar}" th:object="${users}">
                 <div class="input-group">
                     <label for="nome"> Nome Completo</label>
                     <input type="text" id="nome" name="name" th:field="*{name}" placeholder="Digite o seu nome completo"
@@ -55,7 +55,7 @@
                 <div class="input-group">
                     <button type="submit" id="submitBtn" disabled>Cadastrar</button>
                 </div>
-
+                <p th:if="${message}" th:text="${message}"></p>
             </form>
         </div>
     </div>
