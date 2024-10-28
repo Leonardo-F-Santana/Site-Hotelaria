@@ -12,3 +12,4 @@ function verificarSenha() {
       submitBtn.disabled = false;
   }
 }
+

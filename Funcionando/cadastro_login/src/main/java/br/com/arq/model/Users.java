@@ -21,14 +21,14 @@ public class Users {
 	@Column(unique = true)
 	private String telefone;
 	@Override
-	
+
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", email=" + email + ", telefone=" + telefone + "]";
 	}
-	
+
 	public Users() {
 	}
-	
+
 	public Users(Integer id, String name, String email, String telefone) {
 		super();
 		this.id = id;
@@ -36,7 +36,7 @@ public class Users {
 		this.email = email;
 		this.telefone = telefone;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -63,7 +63,7 @@ public class Users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public String getTelefone() {
 		return telefone;
 	}
@@ -71,17 +71,5 @@ public class Users {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
-	public String criptografia(String password) throws Exception {
-		MessageDigest md5 = MessageDigest.getInstance("MD5");
-		byte[] messageDigest = md5.digest(password.getBytes());
-		StringBuilder sb = new StringBuilder();
-		for(byte b: messageDigest) {
-			sb.append(String.format("%02x", b));
-		}
-		return sb.toString();
-	}
-	
 
-	
 }

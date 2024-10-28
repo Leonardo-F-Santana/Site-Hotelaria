@@ -19,7 +19,7 @@
         </div>
         <div class="form-box">
             <h2>Criar Conta</h2>
-            <p> Já é um membro? <a href="login.html"> Login </a> </p>
+            <p> Já é um membro? <a href="login.html" th:href="@{/login}"> Login </a> </p>
             <form method="post" role="form" th:action="@{/cadastrar}" th:object="${users}">
                 <div class="input-group">
                     <label for="nome"> Nome Completo</label>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="input-group w50">
-                    <label for="senha">Senha</label>
+                    <label for="password">Senha</label>
                     <input type="password" id="password" name="password" th:field="*{password}"
                         placeholder="Digite sua senha" required>
                 </div>
