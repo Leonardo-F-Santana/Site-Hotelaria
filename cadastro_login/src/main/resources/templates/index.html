@@ -56,27 +56,39 @@
             <h1>Encontre Sua Próxima Estadia</h1>
             <!--INICIO BUSCA DO SITE-->
             <div class="busca-site">
-                <form action="" method="post">
+                <form action="" th:action="@{/categorias}" method="get">
 
-                    <div class="local-input">
-                        <label>Localização</label>
-                        <input type="text" placeholder="Onde você está indo? ">
+                    <!-- Select para Estado -->
+                    <div class="input-select">
+                        <div class="separacao_um">
+                            <label for="estado">Estado</label>
+                            <select id="estado" name="estado" required>
+                                <option value="" disabled selected>Selecione o Estado</option>
+                                <option value="1">Rio de Janeiro</option>
+                                <option value="2">Santa Catarina</option>
+                                <option value="3">Tocantins</option>
+                                <option value="4">Alagoas</option>
+                                <option value="5">Pernambuco</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div>
-                        <label>Data Inicial</label>
-                        <input type="text" placeholder="Adicione a data">
-                    </div>
-
-                    <div>
-                        <label>Data Final</label>
-                        <input type="text" placeholder="Adicione a data">
-                    </div>
-
-
-                    <div>
-                        <label>Quem</label>
-                        <input type="text" placeholder="Adicionar hóspedes">
+                    <!-- Select para Cidade -->
+                    <div class="input-select">
+                        <div class="separacao_dois">
+                            <label for="cidade">Cidade</label>
+                            <select id="cidade" name="cidade" required>
+                                <option value="" disabled selected>Selecione a Cidade</option>
+                                <option value="1">Rio de Janeiro</option>
+                                <option value="2">Cabo Frio</option>
+                                <option value="3">Paraty</option>
+                                <option value="4">Bombinhas</option>
+                                <option value="5">Jalapão</option>
+                                <option value="6">Maragogi</option>
+                                <option value="7">Recife</option>
+                                <option value="8">Palmas</option>
+                            </select>
+                        </div>
                     </div>
 
                     <button type="submit"><img src="" th:src="@{/image/busca.png}" alt=""></button>

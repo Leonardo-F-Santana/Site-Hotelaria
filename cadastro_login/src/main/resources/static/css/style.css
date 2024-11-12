@@ -112,6 +112,13 @@ nav .menu-outline{
     border-radius: 50px;
 }
 
+.separacao_um {
+    margin-right: 300px
+}
+
+.separacao_dois {
+    margin-right: 230px
+}
 
 .local-input{
     flex:1;
@@ -704,6 +711,47 @@ nav .menu-outline{
 .seta-direita{
     transform: rotate(180deg);
 }
+
+
+/* Estilo para o formulário de busca */
+.busca-site {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre os elementos */
+}
+
+.input-select {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre o label e o select */
+}
+
+/* Estilo dos labels */
+.input-select label {
+    font-size: 15px;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* Estilo dos selects */
+.input-select select {
+    width: 200px;
+    height: 47px;
+    background-color: rgba(255, 255, 255, 0.32);
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid transparent;
+    padding: 10px 15px;
+    font-size: 15px;
+    color: #616161;
+    transition: all 0.4s ease;
+}
+
+/* Efeito ao focar nos selects */
+.input-select select:focus {
+    border-color: #007BFF;
+}
+
 .paginacao span{
     margin: 10px 8px;
     width: 40px;
