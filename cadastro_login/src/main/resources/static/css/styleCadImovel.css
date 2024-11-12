@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image: url('../image/banner-ms.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.w50{
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+}
+/*inicio foto usuartio*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+:root {
+	--blue: #0071FF;
+	--light-blue: #B6DBF6;
+	--dark-blue: #005DD1;
+	--grey: #f2f2f2;
+}
+
+.container {
+	max-width: 400px;
+	width: 100%;
+	background: #fff;
+	padding: 30px;
+	border-radius: 30px;
+}
+.img-area {
+	position: relative;
+	width: 100%;
+	height: 240px;
+	background: var(--grey);
+	margin-bottom: 30px;
+	border-radius: 15px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.img-area .icon {
+	font-size: 100px;
+}
+.img-area h3 {
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 6px;
+}
+.img-area p {
+	color: #999;
+}
+.img-area p span {
+	font-weight: 600;
+}
+.img-area img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	z-index: 100;
+}
+.img-area::before {
+	content: attr(data-img);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	color: #fff;
+	font-weight: 500;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	opacity: 0;
+	transition: all .3s ease;
+	z-index: 200;
+}
+.img-area.active:hover::before {
+	opacity: 1;
+}
+.select-image {
+	display: block;
+	width: 100%;
+	padding: 16px 0;
+	border-radius: 15px;
+	background: var(--blue);
+	color: #fff;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+.select-image:hover {
+	background: var(--dark-blue);
+}
+/*fim foto usuartio*/
+.box{
+    display: flex;
+    width: 930px;
+}
+.img-box{
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px  0 0 20px;
+}
+.img-box img{
+    width: 100%;
+}
+.form-box{
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(40px);
+    padding: 30px 40px;
+    width: 100%;
+    border-radius: 0 20px 20px 0;
+}
+.form-box h2{
+    font-size: 30px;
+}
+.form-box p{
+    font-weight: bold;
+    color: #3D3D3D;
+}
+.form-box p a{
+    color: #ff5361;
+    text-decoration: none;
+}
+.form-box form{
+    margin: 20px 0;
+}
+form .input-group{
+    margin-bottom: 15px;
+}
+form .input-group label{
+    color: #3D3D3D;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo geral dos inputs */
+form .input-group input, 
+form .input-group select, 
+form .input-group tel,
+form .input-group input[type="file"] {
+    width: 100%;
+    height: 47px;
+    background-color: rgba(255, 255, 255, 0.32);
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid transparent;
+    padding: 10px 15px; /* Ajuste do padding para uniformizar */
+    font-size: 15px;
+    color: #616161;
+    transition: all 0.4s ease;
+}
+
+form .input-group input:focus,
+form .input-group select:focus,
+form .input-group tel:focus,
+form .input-group input[type="file"]:focus {
+    border-color: #ff5361;
+}
+
+/* Personalização do campo file */
+form .input-group input[type="file"] {
+    font-size: 15px;
+    padding-left: 15px;
+    cursor: pointer;
+    opacity: 0; /* Torna o botão invisível */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+form .input-group .custom-file-label {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 47px;
+    line-height: 47px; /* Alinha o texto verticalmente */
+    padding: 0 15px;
+    background-color: rgba(255, 255, 255, 0.32);
+    border-radius: 20px;
+    font-size: 15px;
+    color: #616161;
+    border: 2px solid transparent;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+form .input-group input[type="file"]:focus + .custom-file-label,
+form .input-group input[type="file"]:hover + .custom-file-label {
+    border-color: #ff5361;
+}
+
+form .input-group textarea{
+    width: 100%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.32);
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid transparent;
+    padding: 15px;
+    font-size: 15px;
+    color: #616161;
+    transition: all 0.4s ease;
+}
+form .input-group textarea:focus{
+    border-color: #ff5361;
+}
+
+.checkbox-group {
+    display: flex; /* Usando flexbox para alinhar os checkboxes em linha */
+    gap: 20px; /* Espaço entre os checkboxes */
+    flex-wrap: wrap; /* Permite quebrar linha se necessário */
+}
+
+.checkbox-group label {
+    font-size: 14px;
+    font-weight: normal; /* Fontes mais suaves para os labels dos checkboxes */
+    margin-bottom: 0; /* Retirar margem inferior */
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #ff5361; /* Cor personalizada para o checkbox */
+    cursor: pointer;
+    width: 15px; /* Checkbox menor */
+    height: 15px; /* Checkbox menor */
+}
+
+.checkbox-group input[type="checkbox"]:checked + span {
+    color: #ff5361; /* Cor do texto quando o checkbox está marcado */
+}
+
+.checkbox-group label:hover {
+    color: #ff5361; /* Cor do texto ao passar o mouse */
+}
+
+form .input-group button{
+    width: 100%;
+    height: 47px;
+    background: #ff5361;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+form .input-group button:hover{
+    background-color: #fa7480;
+    color: #fff;
+}
+
+.back-icon {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    color: #ff5361; /* Ajuste a cor conforme necessário */
+}
+
+#alinhado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre os itens */
+}
+
+#alinhado .input-group {
+    flex: 1 1 45%; /* Cada item ocupará 45% da largura do contêiner */
+    min-width: 250px; /* Largura mínima para responsividade */
+}
+
+@media (max-width: 700px) {
+    #alinhado .input-group {
+        flex: 1 1 100%; /* Em telas pequenas, cada campo ocupa toda a largura */
+    }
+}
+
+@media (max-width:930px) {
+    .img-box{
+        display: none;
+    }
+    .box{
+        width: 700px;
+    }
+    .form-box{
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+@media (max-width:500px) {
+    .w50{
+        width: 100%;
+        padding: 0;
+    }
+}

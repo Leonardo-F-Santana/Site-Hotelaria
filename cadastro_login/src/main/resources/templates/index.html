@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotelaria - Estácio</title>
+    <link rel="stylesheet" href="" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    <!--INICIO DESTAQUE TOPO DO SITE-->
+    <div class="destaque">
+
+        <!--MENU DO SITE-->
+        <nav id="navBar">
+            <a href="index.html"><img src="" th:src="@{/image/logo.png}" alt="" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="" th:href="@{/}" title="" class="active">Lugares Populares</a></li>
+                <li><a href="" th:href="@{/categorias}" title="">Viajar Agora</a></li>
+            </ul>
+            <!-- Se o usuário não estiver logado, mostre o botão de cadastro -->
+            <div th:if="${session.user == null}">
+                <a href="" th:href="@{/cadastro}" title="" class="cadastro-btn">Cadastre-se Agora</a>
+                <a href="" th:href="@{/login}" title="" class="cadastro-btn">Faça Login</a>
+            </div>
+
+            <!-- Se o usuário estiver logado, mostre o botão de logout -->
+            <div th:if="${session.user != null}">
+                <div class="dropdown">
+                    <button id="dropdownButton" class="cadastro-btn">
+                        <span th:text="${session.user.name}"></span> <span class="arrow">&#9662;</span>
+                    </button>
+                    <ul id="dropdownMenu" class="dropdown-content">
+                        <li>
+                            <form th:action="@{/logout}" method="post">
+                                <button type="submit" class="dropdown-button logout-btn">
+                                    Logout
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--MENU CELULAR DO SITE-->
+            <ion-icon name="menu-outline" class="menu-outline" onclick="menucelular()"></ion-icon>
+            <!--MENU CELULAR DO SITE-->
+
+        </nav>
+        <!--FIM MENU DO SITE-->
+
+        <!--INICIO CORPO DO MENU DO SITE-->
+        <div class="container">
+            <h1>Encontre Sua Próxima Estadia</h1>
+            <!--INICIO BUSCA DO SITE-->
+            <div class="busca-site">
+                <form action="" method="post">
+
+                    <div class="local-input">
+                        <label>Localização</label>
+                        <input type="text" placeholder="Onde você está indo? ">
+                    </div>
+
+                    <div>
+                        <label>Data Inicial</label>
+                        <input type="text" placeholder="Adicione a data">
+                    </div>
+
+                    <div>
+                        <label>Data Final</label>
+                        <input type="text" placeholder="Adicione a data">
+                    </div>
+
+
+                    <div>
+                        <label>Quem</label>
+                        <input type="text" placeholder="Adicionar hóspedes">
+                    </div>
+
+                    <button type="submit"><img src="" th:src="@{/image/busca.png}" alt=""></button>
+
+                </form>
+            </div>
+            <!--FIM BUSCA-->
+        </div>
+        <!--FIM CORPO DO MENU-->
+
+    </div>
+    <!--FIM TOPO-->
+
+    <!--INICIO CORPO-->
+    <div class="container">
+        <h2 class="sub-titulo">Exclusivos</h2>
+
+        <!--INICIO EXCLUSIVOS-->
+        <div id="container">
+            <div class="col">
+                <div class="card">
+                    <a href="" th:href="@{/categorias?cidadeImovel=3}"><img src="" th:src="@{/image/miniatura-1.png}" alt="Texto da imagem"></a>
+                    <h4>Paraty</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a href="" th:href="@{/categorias?cidadeImovel=7}"><img src="" th:src="@{/image/miniatura-2.png}" alt="Texto da imagem"></a>
+                    <h4>Recife</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a href="" th:href="@{/categorias?cidadeImovel=2}"><img src="" th:src="@{/image/miniatura-3.png}" alt="Texto da imagem"></a>
+                    <h4>Cabo Frio</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a href="" th:href="@{/categorias?cidadeImovel=6}"><img src="" th:src="@{/image/miniatura-4.png}" alt="Texto da imagem"></a>
+                    <h4>Maragogi</h4>
+                </div>
+            </div>
+
+        </div>
+
+        <!--FIM  EXCLUSIVOS CORPO-->
+
+
+        <!--INICIO LOCAIS MAIS ALUGADOS-->
+        <h2 class="sub-titulo">Locais Mais Visitados</h2>
+
+        <div class="lacais-quentes">
+
+            <div>
+                <a href="" th:href="@{/categorias?estadoImovel=1}"><img src="" th:src="@{/image/foto-1.jpg}" alt=""></a>
+                <h3>Rio de Janeiro</h3>
+            </div>
+
+            <div>
+                <a href="" th:href="@{/categorias?estadoImovel=3}"><img src="" th:src="@{/image/foto-2.jpg}" alt=""></a>
+                <h3>Jalapão TO</h3>
+            </div>
+
+            <div>
+                <a href="" th:href="@{/categorias?estadoImovel=2}"><img src="" th:src="@{/image/foto-3.jpg}" alt=""></a>
+                <h3>Bombinhas SC</h3>
+            </div>
+
+
+            <div>
+                <a href="" th:href="@{/categorias?estadoImovel=3}"><img src="" th:src="@{/image/foto-4.jpg}" alt=""></a>
+                <h3>Palmas TO</h3>
+            </div>
+
+
+        </div>
+        <!--FIM LOCAIS MAIS ALUGADOS-->
+
+
+        <!-- INICIO SOBRE NOS CORPO DO-->
+        <div class="sobre-nos">
+            <h2>Sobre nós</h2>
+            <h3>Bem-vindo ao Nosso Mundo de Hospedagem e Aventura!
+
+                Se você está pronto para explorar o mundo, relaxar em acomodações luxuosas e criar memórias
+                inesquecíveis, você está no lugar certo. Aqui no nosso site, a sua jornada começa com um clique.
+
+                Descubra Destinos Exclusivos: Navegue por uma seleção cuidadosamente curada de destinos deslumbrantes.
+                De praias paradisíacas a cidades vibrantes, temos opções para todos os gostos e estilos de viagem.
+            </h3>
+
+        </div>
+        <!-- FIM SOBRE NOS DINHEIRO CORPO-->
+
+
+        <footer class="rodape">
+            <a href="https://www.facebook.com/" target="_blank"> <ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="https://www.instagram.com/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://www.linkedin.com" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="https://www.youtube.com/" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+            <hr>
+            <p>Todos os direitos reservados a ALM Tech</p>
+        </footer>
+
+
+    </div>
+    <!--FIM CORPO DO SITE-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" ></script>
+    <script src="" th:src="@{/js/cadastro.js}"></script>
+    <script src="" th:src="@{/js/dropdown.js}"></script>
+</body>
+
+</html>

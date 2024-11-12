@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Imoveis</title>
+    <link rel="stylesheet" href="" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <!--MENU DO SITE-->
+    <nav id="navBar" class="nav-msflix">
+        <a href="" th:href="@{/}"><img src="" th:src="@{/image/logo.png}" alt="" class="logo"></a>
+        <div th:if="${session.user == null}">
+            <ul class="nav-links">
+                <li><a href="" th:href="@{/}" title="">Lugares Populares</a></li>
+                <li><a href="" th:href="@{/categorias}" title="" class="active">Viajar Agora</a></li>
+            </ul>
+        </div>
+        <div th:if="${session.user != null}">
+            <div th:if="${session.user.admin == 1}">
+                <ul class="nav-links">
+                    <li><a href="" th:href="@{/}" title="">Lugares Populares</a></li>
+                    <li><a href="" th:href="@{/categorias}" title="" class="active">Viajar Agora</a></li>
+                    <li><a href="" th:href="@{/cadastrarImoveis}" title="">Cadastrar Imóveis</a></li>
+                </ul>
+            </div>
+        </div>
+        <div th:if="${session.user == null}">
+            <a href="" th:href="@{/cadastro}" title="" class="cadastro-btn">Cadastre-se Agora</a>
+            <a href="" th:href="@{/login}" title="" class="cadastro-btn">Faça Login</a>
+        </div>
+
+        <!-- Se o usuário estiver logado, mostre o botão de logout -->
+        <div th:if="${session.user != null}">
+            <div class="dropdown">
+                <button id="dropdownButton" class="cadastro-btn">
+                    <span th:text="${session.user.name}"></span> <span class="arrow">&#9662;</span>
+                </button>
+                <ul id="dropdownMenu" class="dropdown-content">
+                    <li>
+                        <form th:action="@{/logout}" method="post">
+                            <button type="submit" class="dropdown-button logout-btn">
+                                Logout
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--MENU CELULAR DO SITE-->
+        <ion-icon name="menu-outline" class="menu-outline" onclick="menucelular()"></ion-icon>
+        <!--FIM MENU CELULAR DO SITE-->
+
+    </nav>
+    <!--FIM MENU DO SITE-->
+
+    <!--INICIO RODAPE DO SITE-->
+    <div class="container">
+
+        <!-- INICIO LISTA DE IMOVEIS -->
+        <div class="lista-imoveis">
+            <!-- INICIO COLUNA ESQUERDA -->
+            <div class="coluna-esquerda">
+                <p th:text="${imoveis.size()} + ' Opções'"></p>
+                <h1>Lista de Imóveis</h1>
+
+                <!-- INICIO LISTA DE IMOVEIS -->
+                <div th:each="imovel : ${imoveis}">
+                    <div class="imovel">
+                        <!-- Imagem do Imóvel -->
+                        <div class="imovel-img">
+                            <img th:src="@{/image/fotoImovel/{nomeImagemImovel}(nomeImagemImovel=${imovel.nomeImagemImovel})}" alt="Imagem do Imóvel">
+                        </div>
+
+                        <!-- Informações do Imóvel -->
+                        <div class="imovel-info">
+                            <p th:text="'Local lindo no estado de ' +
+                                        (${imovel.estadoImovel} == 1 ? 'Rio de Janeiro' : '') +
+                                        (${imovel.estadoImovel} == 2 ? 'Santa Catarina' : '') +
+                                        (${imovel.estadoImovel} == 3 ? 'Tocantins' : '') +
+                                        (${imovel.estadoImovel} == 4 ? 'Alagoas' : '') +
+                                        (${imovel.estadoImovel} == 5 ? 'Pernambuco' : '')"></p>
+                            <h3 th:text="'Local de lazer e luxo em ' +
+                                        (${imovel.cidadeImovel} == 1 ? 'Rio de Janeiro' : '') +
+                                        (${imovel.cidadeImovel} == 2 ? 'Cabo Frio' : '') +
+                                        (${imovel.cidadeImovel} == 3 ? 'Paraty' : '') +
+                                        (${imovel.cidadeImovel} == 4 ? 'Bombinhas' : '') +
+                                        (${imovel.cidadeImovel} == 5 ? 'Jalapão' : '') +
+                                        (${imovel.cidadeImovel} == 8 ? 'Palmas' : '') +
+                                        (${imovel.cidadeImovel} == 6 ? 'Maragogi' : '') +
+                                        (${imovel.cidadeImovel} == 7 ? 'Recife' : '')">
+                            </h3>
+                            <p th:text="${imovel.quartoImovel} + ' quartos / ' +
+                                       (${imovel.banheiroImovel} != null ? ${imovel.banheiroImovel} : 'Não especificado') + ' Banheiros' +
+                                       (${imovel.piscinaImovel} == 1 ? ' / Piscina' : '') +
+                                       (${imovel.wifiImovel} == 1 ? ' / Wifi' : '') +
+                                       (${imovel.garagemImovel} == 1 ? ' / Garagem' : '') +
+                                       (${imovel.hidromassagemImovel} == 1 ? ' / Hidromassagem' : '') +
+                                       (${imovel.banheiraImovel} == 1 ? ' / Banheira' : '') +
+                                       (${imovel.saunaImovel} == 1 ? ' / Sauna' : '')"></p>
+
+                            <!-- Valor e Hóspedes -->
+                            <div class="imovel-valor">
+                                <br>
+                                <a th:href="@{/detalhesImovel/{id}(id=${imovel.idImovel})}" class="cadastro-btn">Saiba mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM LISTA DE IMOVEIS -->
+            </div>
+            <!-- FIM COLUNA ESQUERDA -->
+
+            <!-- INICIO COLUNA DIREITA (FILTRO DE BUSCA) -->
+            <div class="coluna-direita">
+                <div class="barra-lateral">
+                    <h2>Filtro de Busca</h2>
+
+                    <h3>Tipo de Imóvel</h3>
+                    <form action="/categorias" method="GET">
+                        <div class="filtro">
+                            <input type="checkbox" name="tipo" value="1">
+                            <p>Apartamento</p>
+                        </div>
+                        <div class="filtro">
+                            <input type="checkbox" name="tipo" value="2">
+                            <p>Casa</p>
+                        </div>
+                        <div class="filtro">
+                            <input type="checkbox" name="tipo" value="3">
+                            <p>Chalé</p>
+                        </div>
+
+                        <h3>Facilidades</h3>
+                        <div class="filtro">
+                            <input type="checkbox" name="piscina" value="1">
+                            <p>Piscina</p>
+                        </div>
+                        <div class="filtro">
+                            <input type="checkbox" name="wifi" value="1">
+                            <p>Wifi</p>
+                        </div>
+                        <div class="filtro">
+                            <input type="checkbox" name="garagem" value="1">
+                            <p>Garagem</p>
+                        </div>
+                        <div class="filtro">
+                            <input type="checkbox" name="hidromassagem" value="1">
+                            <p>Hidromassagem</p>
+                        </div>
+                        <div class="filtro">
+                            <input type="checkbox" name="banheira" value="1">
+                            <p>Banheira</p>
+                        </div>
+                        <div class="filtro">
+                            <input type="checkbox" name="sauna" value="1">
+                            <p>Sauna</p>
+                        </div>
+
+                        <h3>Estado</h3>
+                        <div class="filtro">
+                            <select name="estado">
+                                <option value="">Todos os Estados</option>
+                                <option value="1">Rio de Janeiro</option>
+                                <option value="2">Santa Catarina</option>
+                                <option value="3">Tocantins</option>
+                                <option value="4">Alagoas</option>
+                                <option value="5">Pernambuco</option>
+                            </select>
+                        </div>
+
+                        <button class="cadastro-btn" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+            <!-- FIM COLUNA DIREITA -->
+        </div>
+        <!-- FIM LISTA DE IMOVEIS -->
+
+
+    <footer class="rodape">
+        <a href="https://www.facebook.com/" target="_blank"> <ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://www.instagram.com/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://www.linkedin.com" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="https://www.youtube.com/" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+        <hr>
+        <p>Todos os direitos reservados a ALM Tech</p>
+    </footer>
+    </div>
+    <!--INICIO RODAPE DO SITE-->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="" th:src="@{/js/app.js}"></script>
+</body>
+
+</html>

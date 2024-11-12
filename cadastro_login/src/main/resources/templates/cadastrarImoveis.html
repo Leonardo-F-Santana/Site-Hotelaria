@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="" th:href="@{/css/styleCadImovel.css}">
+    <script src="" th:src="@{/js/filtroCidade.js}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="form-box">
+            <a href="" th:href="@{/}" class="back-link">
+                <ion-icon name="chevron-back" class="back-icon"></ion-icon>
+            </a>
+            <h2>Seus dados:</h2>
+            <!-- O form agora usa th:action e th:object -->
+            <form th:action="@{/cadastrarImovel}" th:object="${imoveis}" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="file">Foto do Imóvel</label>
+                    <input required type="file" id="file" name="file" class="custom-file-input">
+                    <label for="file" class="custom-file-label">Escolher arquivo</label>
+                </div>
+
+                <!-- Inclua o arquivo JS e chame a função -->
+                <script th:src="@{/js/subirFoto.js}"></script>
+                <script>
+                    handleFileUpload("file", "custom-file-label");
+                </script>
+
+                <div id="alinhado">
+                    <div class="input-group">
+                        <label for="tipoImovel">Tipo do Imóvel</label>
+                        <!-- Vinculando o select com o modelo -->
+                        <select required id="tipoImovel" th:field="*{tipoImovel}">
+                            <option value="">Selecione o Tipo do Imóvel</option>
+                            <option value="1">Apartamento</option>
+                            <option value="2">Casa</option>
+                            <option value="3">Chalé</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="estado">Estado</label>
+                        <select required id="estado" th:field="*{estadoImovel}" onchange="filtrarCidade()">
+                            <option value="">Selecione um Estado</option>
+                            <option value="1">Rio de Janeiro</option>
+                            <option value="2">Santa Catarina</option>
+                            <option value="3">Tocantins</option>
+                            <option value="4">Alagoas</option>
+                            <option value="5">Pernambuco</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="cidade">Cidade</label>
+                        <select required id="cidade" th:field="*{cidadeImovel}">
+                            <option value="">Selecione uma Cidade</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="telefone">Número Contato</label>
+                        <input required type="tel" id="telefone" th:field="*{telefoneImovel}"
+                            placeholder="Digite o seu telefone">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="quarto">Número de Quartos</label>
+                        <input required type="text" id="quarto" th:field="*{quartoImovel}"
+                            placeholder="Digite o número de quartos">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="banheiro">Número de Banheiros</label>
+                        <input required type="text" id="banheiro" th:field="*{banheiroImovel}"
+                            placeholder="Digite o número de banheiros">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Adicionais</label>
+                    <div class="checkbox-group">
+                        <div>
+                            <input type="checkbox" id="piscina" name="piscina" th:field="*{piscinaImovel}" value="1">
+                            <label for="piscina">Piscina</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="wifi" name="wifi" th:field="*{wifiImovel}" value="1">
+                            <label for="wifi">Wi-Fi</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="garagem" name="garagem" th:field="*{garagemImovel}" value="1">
+                            <label for="garagem">Garagem</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="hidromassagem" name="hidromassagem"
+                                th:field="*{hidromassagemImovel}" value="1">
+                            <label for="hidromassagem">Hidromassagem</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="banheira" name="banheira" th:field="*{banheiraImovel}" value="1">
+                            <label for="banheira">Banheira</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sauna" name="sauna" th:field="*{saunaImovel}" value="1">
+                            <label for="sauna">Sauna</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="sobre">Sobre</label>
+                    <textarea required id="sobre" th:field="*{sobreImovel}" placeholder="Digite mais informações"></textarea>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Cadastrar Imóvel</button>
+                </div>
+            </form>
+            <p th:if="${message}" th:text="${message}"></p>
+        </div>
+    </div>
+</body>
+
+</html>
